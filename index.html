@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TECNOPATITAS · Bienestar para tus mascotas</title>
+<meta name="description" content="Guías de cuidado, herramientas digitales y aliados para el bienestar de tus mascotas. Prototipo escolar.">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#inicio">Saltar al contenido</a>
+<header class="nav"><div class="wrap bar">
+<a class="logo" href="#inicio"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><circle cx="5" cy="10" r="2.2"/><circle cx="9.5" cy="5.5" r="2.2"/><circle cx="14.5" cy="5.5" r="2.2"/><circle cx="19" cy="10" r="2.2"/><path d="M12 11c-3 0-6 3.5-6 6 0 2 1.8 2.5 3 2.2 1.2-.3 2-.7 3-.7s1.8.4 3 .7c1.2.3 3-.2 3-2.2 0-2.5-3-6-6-6z"/></svg>TECNOPATITAS</a>
+<button id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+<nav id="menu" aria-label="Principal"><a href="#inicio">Inicio</a><a href="#guias">Guías de cuidado</a><a href="#denuncias">Denuncias</a><a href="#directorio">Directorio de aliados</a><a href="#mascotas">Mis mascotas</a><a href="#planes">Suscripciones</a><a href="#nosotros">Sobre nosotros</a><a href="#contacto">Contacto</a><a class="btn coral" href="#planes">Explorar planes</a></nav>
+</div></header>
+<noscript><p class="note">Esta página necesita JavaScript para mostrar sus secciones interactivas.</p></noscript>
+<main>
+<section id="inicio" class="hero"><div class="wrap grid2">
+<div><h1>El bienestar de tus mascotas, en una sola huella</h1>
+<p>TECNOPATITAS conecta a los dueños de mascotas con información de cuidado, herramientas digitales y profesionales aliados.</p>
+<p><a class="btn coral" href="#guias">Explorar guías</a> <a class="btn ghost" href="#planes">Conocer los planes</a></p>
+<ul class="chips"><li>🩺 Cuidado</li><li>🛡️ Protección</li><li>🤝 Comunidad</li></ul>
+<p class="note">Prototipo escolar: las funciones son demostraciones, sin servidor ni cobros reales.</p></div>
+<div class="art" aria-hidden="true">🐶🐱</div>
+</div></section>
+
+<section id="funciones"><div class="wrap"><h2>Todo lo que tu mascota necesita</h2><div id="features" class="cards"></div>
+<p class="cta"><a class="btn coral" href="#planes">Conocer los planes de TECNOPATITAS</a></p></div></section>
+
+<section id="guias" class="alt"><div class="wrap"><h2>Guías de cuidado animal</h2>
+<p>Información general y responsable. No sustituye la consulta con un veterinario ni ofrece diagnósticos.</p>
+<div class="tools"><input id="gq" type="search" placeholder="Buscar guías…" aria-label="Buscar guías"><select id="gc" aria-label="Categoría"><option value="">Todas las categorías</option></select></div>
+<div id="glist" class="cards"></div></div></section>
+
+<section id="denuncias"><div class="wrap"><h2>Denuncia el maltrato animal</h2>
+<p>Proteger a los animales empieza por avisar. Describe lo que viste; no pedimos nombre, teléfono ni correo, y puedes usar el formulario sin identificarte.</p>
+<p class="note"><b>Simulación escolar:</b> este formulario no transmite denuncias reales ni guarda ni envía datos. Si presencias maltrato, acude a las autoridades de tu localidad.</p>
+<form id="fd" class="f" novalidate>
+<label>Tipo de situación<select name="t" required><option value="">Selecciona una opción</option><option>Maltrato físico</option><option>Abandono</option><option>Falta de agua, alimento o refugio</option><option>Otra situación</option></select></label>
+<label>Descripción de los hechos<textarea name="d" rows="4" minlength="20" required></textarea><small>Mínimo 20 caracteres.</small></label>
+<label>Fecha aproximada<input type="date" name="f" required></label>
+<label>Estado<input name="e" required></label>
+<label>Municipio<input name="m" required></label>
+<label>Ubicación o referencia del lugar (opcional)<input name="l"></label>
+<label>Información adicional (opcional)<textarea name="a" rows="2"></textarea></label>
+<button class="btn coral">Enviar (simulación)</button><p id="dok" role="status"></p></form></div></section>
+
+<section id="directorio" class="alt"><div class="wrap"><h2>Directorio de aliados</h2>
+<p class="note"><b>Datos de demostración:</b> no son establecimientos reales y las etiquetas «Aliado verificado» son ilustrativas.</p>
+<div class="tools"><input id="aq" type="search" placeholder="Buscar por nombre o servicio…" aria-label="Buscar aliados"><select id="at" aria-label="Tipo"><option value="">Todos los tipos</option></select></div>
+<div id="dlist" class="cards"></div>
+<div class="mapbox"><p id="maphint">Pulsa «Ver ubicación» en una ficha para cargar el mapa (búsqueda genérica en Google Maps, porque las fichas son de ejemplo).</p><iframe id="map" title="Mapa de Google Maps" loading="lazy" hidden></iframe><a id="maplink" class="btn ghost" target="_blank" rel="noopener" hidden>Abrir en Google Maps</a></div></div></section>
+
+<section id="mascotas"><div class="wrap"><h2>Mis mascotas</h2>
+<p class="note">Demostración: las fichas de ejemplo son ficticias. Lo que agregues se guarda solo en este navegador (localStorage), sin sincronizar y sin datos sensibles.</p>
+<div id="petlist" class="cards"></div>
+<h3>Agregar una mascota</h3>
+<form id="fp" class="f"><label>Nombre<input name="n" required maxlength="30"></label><label>Especie<select name="s"><option>Perro</option><option>Gato</option><option>Ave</option><option>Conejo</option><option>Otro</option></select></label><label>Raza (opcional)<input name="r" maxlength="30"></label><label>Edad (opcional)<input name="e" maxlength="20" placeholder="Ej. 2 años"></label><button class="btn">Agregar mascota</button></form></div></section>
+
+<section id="planes" class="alt"><div class="wrap"><h2>Suscripciones</h2>
+<p class="note">Los precios corresponden al modelo de negocio propuesto para este proyecto escolar. No se realizan cobros.</p>
+<div class="tools" role="group" aria-label="Periodo de facturación"><button class="btn" data-bill="m" aria-pressed="true">Mensual</button><button class="btn" data-bill="y" aria-pressed="false">Anual</button></div>
+<div id="plans"><h3>Para dueños de mascotas</h3><div id="pl0" class="cards"></div><h3>Para aliados comerciales</h3><div id="pl1" class="cards"></div></div></div></section>
+
+<section id="notificaciones"><div class="wrap"><h2>Notificaciones y recordatorios</h2>
+<p class="note">Demostración local: no se envían notificaciones push, mensajes de WhatsApp ni correos.</p>
+<ul id="nlist" class="nl"></ul>
+<h3>Preferencias</h3><div id="nprefs"></div>
+<button id="nbtn" class="btn ghost">Probar notificación del navegador</button></div></section>
+
+<section id="nosotros" class="alt"><div class="wrap"><h2>Sobre nosotros</h2><div class="ph" aria-hidden="true"></div></div></section>
+
+<section id="consejos"><div class="wrap"><h2>Consejos destacados</h2><div id="tips" class="cards"></div></div></section>
+
+<section id="faq" class="alt"><div class="wrap"><h2>Preguntas frecuentes</h2><div id="faqs"></div>
+<p class="cta"><a class="btn coral" href="#denuncias">Apoya el bienestar animal: reporta el maltrato</a></p></div></section>
+</main>
+
+<footer id="contacto"><div class="wrap"><strong>TECNOPATITAS</strong> · prototipo escolar
+<p class="links"><a href="#guias">Guías</a> <a href="#denuncias">Denuncias</a> <a href="#directorio">Directorio</a> <a href="#mascotas">Mis mascotas</a> <a href="#planes">Suscripciones</a> <a href="#nosotros">Sobre nosotros</a></p>
+<p><b>Contacto:</b> usa el chat de demostración; el canal oficial se publicará cuando exista.</p>
+<p><b>Privacidad:</b> no pedimos datos personales ni usamos cuentas. Las fuentes de Google y el mapa cargan recursos externos. «Mis mascotas» guarda datos de ejemplo solo en tu navegador.</p>
+<p><b>Limitaciones:</b> denuncias, pagos, recordatorios, chat y aliados son simulaciones; en una versión real requerirían servidor y servicios externos.</p></div></footer>
+
+<button id="top" hidden aria-label="Volver al inicio">↑</button>
+<button id="chatBtn" aria-label="Abrir chat">💬</button>
+<aside id="chat" aria-label="Chat de atención"><header><b>Atención TECNOPATITAS</b><button id="chatX" aria-label="Cerrar chat">✕</button></header><div id="msgs" aria-live="polite"></div><p class="note">Simulación automática del prototipo escolar; no es personal real. <span id="wa"></span></p><form id="cf"><input id="ci" placeholder="Escribe tu mensaje" aria-label="Mensaje" autocomplete="off" required><button class="btn coral">Enviar</button></form></aside>
+<dialog id="modal"><div id="mb"></div><form method="dialog"><button class="btn ghost">Cerrar</button></form></dialog>
+<script src="script.js"></script>
+</body>
+</html>
